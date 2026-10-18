@@ -1,0 +1,27 @@
+@import 'tailwindcss';
+@source "../index.html";
+@source "../js";
+
+@theme {
+  --font-sans: 'Comfortaa', system-ui, sans-serif;
+  --font-display: 'M PLUS Rounded 1c', 'Comfortaa', sans-serif;
+  --color-navy: #154472;
+  --color-deep: #0c3d65;
+  --color-ocean: #1d5b8e;
+  --color-sky: #6ad8ef;
+  --color-cyan: #2acfed;
+  --color-azure: #2aa4ff;
+  --color-mist: #d7eeff;
+}
+
+html { scroll-behavior: smooth; }
+section[id], footer[id] { scroll-margin-top: 72px; }
+body { font-family: var(--font-sans); color: var(--color-deep); }
+
+@keyframes fadeUp { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
+@keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  [style*='marquee'] { animation: none !important; }
+}
